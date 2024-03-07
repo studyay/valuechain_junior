@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: 'iceJaram-Rg';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/iceJaram-Rg.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'SUIT04';
+            font-weight: 400;
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+        }
+
+        .myImage {
+            margin-top: 40px;
+            width: 120px;
+            height: 120px;
+            border-radius: 100%;
+
+            background-image: url('https://yt3.ggpht.com/vQJl-E6HXkFePwmQXG7YyCpaV5BcemHIhXKO3UO6x6vAERP0I98-D6zc1QLrR8hW5Wrr9AIP8g=s600-c-k-c0x00ffffff-no-rj-rp-mo');
+            background-position: center;
+            background-size: 110%;
+        }
+
+        .myprofile {
+            width: 370px;
+            margin: 30px auto 0px auto;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .myName {
+            color: #F8D849;
+            font-family: "Montserrat"
+        }
+
+        .myAbout {
+            color: #FBEADF;
+            margin-top: 0px;
+            margin-bottom: 30px;
+
+            font-size: 15px;
+            font-family: 'iceJaram-Rg';
+        }
+
+        a {
+            width: 230px;
+            height: 50px;
+            background-color: #1D493E;
+
+            margin-bottom: 10px;
+            padding-left: 30px;
+            padding-right: 10px;
+            border-radius: 15px;
+
+            color: #FBEADF;
+            text-decoration: none;
+            font-family: 'SUIT04';
+            font-size: 15px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: baseline;
+
+            text-decoration: none;
+            transition: transform 1.0s, border-radius 1.0s;
+        }
+
+        .a1:hover {
+            background-color: #F8D849;
+
+            color: black;
+            border-radius: 50px;
+
+            transform: scale(1.05);
+        }
+        .a2:hover {
+            background-color: #C4E549;
+            color: black;
+            border-radius: 50px;
+
+            transform: scale(1.05);
+        }
+        .a3:hover {
+            background-color: #EB663D;
+            color: black;
+            border-radius: 50px;
+
+            transform: scale(1.05);
+        }
+        .a4:hover {
+            background-color: #FBEADF;
+            color: black;
+            border-radius: 50px;
+
+            transform: scale(1.05);
+        }
+
+        .color1 {
+            color: #F8D849;
+        }
+
+        .color2 {
+            color: #C4E549;
+        }
+
+        .color3 {
+            color: #EB663D;
+        }
+        #ColorChange {
+            transition: color 1s ease; /* 색상 변경에 대한 트랜지션 효과 설정 */
+        }
+    </style>
+</head>
+
+<body class="myprofile" style="background-color: #09201B;">
+    <div class="myImage"></div>
+    <h1 class="myName color1" id="ColorChange">@valuechain_junior</h1>
+    <p class="myAbout">Value Chain Junior is growing into a youth platform that brands and develops individual capabilities and expertise to become a next-generation leader.</p>
+    <a class="a1" target="_blank" href="https://valuechainjunior.wixsite.com/home">😎 HOME PAGE</a>
+    <a class="a2" target="_blank" href="https://www.instagram.com/valuechain_junior/">✍️ VCJ INSTAGRAM</a>
+    <a class="a3" target="_blank" href="https://www.youtube.com/@valuechain_junior">💛 YOUTUBE CHANNEL</a>
+    <a class="a4" target="_blank" href="https://cafe.naver.com/visionschool4you">📔 COACHING CENTER</a>
+
+    <script>
+        // 함수를 사용하여 색상을 순환하도록 설정합니다.
+        function changeColor() {
+            var textElement = document.getElementById("ColorChange");
+
+            // 색상 클래스의 배열을 정의합니다.
+            var colors = ["color1", "color2", "color3"];
+
+            // 현재 색상 클래스를 확인하고 다음 색상 클래스로 변경합니다.
+            for (var i = 0; i < colors.length; i++) {
+                if (textElement.classList.contains(colors[i])) {
+                    textElement.classList.remove(colors[i]);
+                    var nextColor = (i + 1) % colors.length;
+                    textElement.classList.add(colors[nextColor]);
+                    break;
+                }
+            }
+        }
+        // 2초마다 changeColor 함수를 호출하여 폰트 색상을 변경합니다.
+        setInterval(changeColor, 2000);
+    </script>
+</body>
+
+</html>
